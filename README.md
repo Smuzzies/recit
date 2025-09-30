@@ -22,7 +22,7 @@ Recit is a modern, elegant screen recording tool with a beautiful terminal user 
 
 ![Recit Screenshot](screenshot.png)
 
-*Recit's beautiful TUI interface with Base2Tone Earth theme*
+*Recit's beautiful TUI interface with textual-dark theme*
 
 ## 🚀 Installation
 
