@@ -80,6 +80,30 @@ sudo cp monitor_utils.py /usr/local/bin/
 recit
 ```
 
+### Optional: Keyboard Shortcut
+
+Set up a custom keyboard shortcut to launch Recit instantly:
+
+**Linux Mint / Cinnamon:**
+1. Open **Menu → Preferences → Keyboard → Shortcuts → Custom Shortcuts**
+2. Click **Add custom shortcut**
+3. **Name:** Recit
+4. **Command:** `/path/to/recit` (or `/usr/local/bin/recit` if installed system-wide)
+5. Click **Apply**
+6. Click the new shortcut and press your desired key combination (e.g., `Ctrl+Alt+R`)
+
+**GNOME / Ubuntu:**
+1. Open **Settings → Keyboard → Custom Shortcuts**
+2. Click **+** to add a new shortcut
+3. **Name:** Recit
+4. **Command:** `/path/to/recit`
+5. Click **Set Shortcut** and press your key combination
+
+**KDE Plasma:**
+1. Open **System Settings → Shortcuts → Custom Shortcuts**
+2. **Edit → New → Global Shortcut → Command/URL**
+3. Set the command and assign your key combination
+
 ## ⌨️ Keyboard Shortcuts
 
 | Key | Action |
