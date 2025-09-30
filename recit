@@ -1,0 +1,96 @@
+#!/bin/bash
+# Recit - Screen Recorder GUI Launcher
+# Opens the terminal GUI in a new terminal window
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Check if Python 3 is available
+if ! command -v python3 &> /dev/null; then
+    echo "Error: python3 is not installed"
+    exit 1
+fi
+
+# Function to try different terminal emulators
+launch_terminal() {
+    local script_path="$1"
+    
+    # List of common terminal emulators to try
+    local terminals=(
+        "gnome-terminal"
+        "konsole"
+        "xfce4-terminal"
+        "lxterminal"
+        "mate-terminal"
+        "tilix"
+        "terminator"
+        "alacritty"
+        "kitty"
+        "st"
+        "xterm"
+    )
+    
+    # Try each terminal emulator
+    for terminal in "${terminals[@]}"; do
+        if command -v "$terminal" &> /dev/null; then
+            case "$terminal" in
+                "gnome-terminal")
+                    gnome-terminal --title="Recit" --geometry=80x21 --hide-menubar -- python3 "$script_path"
+                    return 0
+                    ;;
+                "konsole")
+                    konsole --title "Recit" --geometry 80x21 --hide-menubar -e python3 "$script_path"
+                    return 0
+                    ;;
+                "xfce4-terminal")
+                    xfce4-terminal --title="Recit" --geometry=80x21 --hide-menubar -e "python3 '$script_path'"
+                    return 0
+                    ;;
+                "lxterminal")
+                    lxterminal --title="Recit" --geometry=80x21 -e "python3 '$script_path'"
+                    return 0
+                    ;;
+                "mate-terminal")
+                    mate-terminal --title="Recit" --geometry=80x21 --hide-menubar -e "python3 '$script_path'"
+                    return 0
+                    ;;
+                "tilix")
+                    tilix --title="Recit" --geometry=80x21 -e "python3 '$script_path'"
+                    return 0
+                    ;;
+                "terminator")
+                    terminator --title="Recit" --geometry=80x21 -e "python3 '$script_path'"
+                    return 0
+                    ;;
+                "alacritty")
+                    alacritty --title "Recit" --option window.dimensions.columns=80 --option window.dimensions.lines=21 -e python3 "$script_path"
+                    return 0
+                    ;;
+                "kitty")
+                    kitty --title "Recit" -o initial_window_width=80c -o initial_window_height=21c python3 "$script_path"
+                    return 0
+                    ;;
+                "st")
+                    st -t "Recit" -g 80x21 -e python3 "$script_path"
+                    return 0
+                    ;;
+                "xterm")
+                    xterm -T "Recit" -geometry 80x21 -e python3 "$script_path"
+                    return 0
+                    ;;
+            esac
+        fi
+    done
+    
+    return 1
+}
+
+# Try to launch in new terminal window
+if launch_terminal "$SCRIPT_DIR/recit.py"; then
+    echo "Recit launched in new terminal window"
+else
+    echo "Could not find a suitable terminal emulator."
+    echo "Running in current terminal instead..."
+    echo "Press Enter to continue..."
+    read
+    python3 "$SCRIPT_DIR/recit.py"
+fi

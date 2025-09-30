@@ -1,0 +1,19 @@
+# Python packages
+textual>=0.38.0
+
+# System packages (install via apt/dnf/pacman)
+# Recording & Screenshots:
+#   - ffmpeg (video recording)
+#   - slop (area selection tool)
+#   - scrot (screenshots)
+#   - imagemagick (for WebP conversion via 'convert' command)
+#   - xrandr (monitor detection, usually pre-installed)
+#
+# Installation on Debian/Ubuntu/Mint:
+#   sudo apt install ffmpeg slop scrot imagemagick
+#
+# Installation on Fedora:
+#   sudo dnf install ffmpeg slop scrot ImageMagick
+#
+# Installation on Arch:
+#   sudo pacman -S ffmpeg slop scrot imagemagick
