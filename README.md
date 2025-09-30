@@ -18,9 +18,11 @@ Recit is a modern, elegant screen recording tool with a beautiful terminal user 
 - 💾 **Smart Scaling** - Automatic aspect ratio preservation
 - 🖥️ **Monitor Detection** - Automatic monitor resolution detection
 
-## 📸 Screenshots
+## 📸 Screenshot
 
-*Coming soon*
+![Recit Screenshot](screenshot.png)
+
+*Recit's beautiful TUI interface with Base2Tone Earth theme*
 
 ## 🚀 Installation
 
