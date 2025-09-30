@@ -172,7 +172,7 @@ MIT License - feel free to use this project however you'd like!
 
 ## 📧 Contact
 
-Created by [@vender3d](https://github.com/vender3d)
+Created by theSmuz
 
 ---
 
